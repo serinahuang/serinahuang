@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!-- This file was created with the aha Ansi HTML Adapter. https://github.com/theZiz/aha -->
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="application/xml+xhtml; charset=UTF-8"/>
+<title>test</title>
+</head>
+<body>
+<pre>
+Serinas-MacBook-Air-2:hyphy serina$ hyphy
+
+           /HYPHY 2.5.25(MP) for Darwin on x86_64\           
+***************** TYPES OF STANDARD ANALYSES *****************
+
+
+	(1) Selection Analyses
+	(2) Evolutionary Hypothesis Testing
+	(3) Relative evolutionary rate inference
+	(4) Coevolutionary analysis
+	(5) Basic Analyses
+	(6) Codon Selection Analyses
+	(7) Compartmentalization
+	(8) Data File Tools
+	(9) Miscellaneous
+	(10) Model Comparison
+	(11) Molecular Clock
+	(12) Phylogeny Reconstruction
+	(13) Positive Selection
+	(14) Recombination
+	(15) Selection/Recombination
+	(16) Relative Rate
+	(17) Relative Ratio
+
+ Please select type of analyses you want to list (or press ENTER to process custom batch file):1
+
+***************** FILES IN 'Selection Analyses' ***************** 
+
+
+	(1) [MEME] Test for episodic site-level selection using MEME (Mixed Effects Model of Evolution).
+	(2) [FEL] Test for pervasive site-level selection using FEL (Fixed Effects Likelihood).
+	(3) [SLAC] Test for pervasive site-level selection using SLAC (Single Likelihood Ancestor Counting).
+	(4) [FUBAR] Test for pervasive site-level selection using FUBAR (Fast Unconstrained Bayesian AppRoximation for inferring selection).
+	(5) [BUSTED] Test for episodic gene-wide selection using BUSTED (Branch-site Unrestricted Statistical Test of Episodic Diversification).
+	(6) [aBSREL] Test for lineage-specific evolution using the branch-site method aBS-REL (Adaptive Branch-Site Random Effects Likelihood).
+	(7) [RELAX] Test for relaxation of selection pressure along a specified set of test branches using RELAX (a random effects test of selection relaxation).
+	(8) [FADE] Test a protein alignment for directional selection towards specific amino acids along a specified set of test branches using FADE (a FUBAR Approach to Directional Evolution).
+	(9) [PRIME] 
+
+ Please select the analysis you would like to perform (or press ENTER to return to the list of analysis types):5
+
+Analysis Description
+--------------------
+BUSTED (branch-site unrestricted statistical test of episodic
+diversification) uses a random effects branch-site model fitted jointly
+to all or a subset of tree branches in order to test for alignment-wide
+evidence of episodic diversifying selection. Assuming there is evidence
+of positive selection (i.e. there is an omega &gt; 1), BUSTED will also
+perform a quick evidence-ratio style analysis to explore which
+individual sites may have been subject to selection. v2.0 adds support
+for synonymous rate variation, and relaxes the test statistic to 0.5
+(chi^2_0 + chi^2_2). Version 2.1 adds a grid search for the initial
+starting point. Version 2.2 changes the grid search to LHC, and adds an
+initial search phase to use adaptive Nedler-Mead. Version 3.0 implements
+the option for branch-site variation in synonymous substitution rates.
+Version 3.1 adds HMM auto-correlation option for SRV, and binds SRV
+distributions for multiple branch sets 
+
+- __Requirements__: in-frame codon alignment and a phylogenetic tree (optionally annotated
+with {})
+
+- __Citation__: *Gene-wide identification of episodic selection*, Mol Biol Evol.
+32(5):1365-71
+
+- __Written by__: Sergei L Kosakovsky Pond
+
+- __Contact Information__: spond@temple.edu
+
+- __Analysis Version__: 3.1
+
+
+&gt;code –&gt; Universal
+
+
+&gt;Select a coding sequence alignment file (`/Users/serina/Desktop/Li Lab/hyphy/`) ../enard/ZAP_261_mammals_withmissing.fasta
+
+-------
+&gt;[WARNING] This dataset contains 5 duplicate sequences. Identical
+sequences do not contribute any information to the analysis and only
+slow down computation. Please consider removing duplicate or 'nearly'
+duplicate sequences, e.g. using
+https://github.com/veg/hyphy-analyses/tree/master/remove-duplicates
+prior to running selection analyses
+-------
+
+
+&gt;Please select a tree file for the data: (`/Users/serina/Desktop/Li Lab/hyphy/`) ../enard/mammals_tree.nwk
+
+&gt;Loaded a multiple sequence alignment with **261** sequences, **753** codons, and **1** partitions from `/Users/serina/Desktop/Li Lab/enard/ZAP_261_mammals_withmissing.fasta`
+
+&gt;branches –&gt; All
+
+&gt;srv –&gt; Yes
+The number omega rate classes to include in the model (permissible range = [1,10], default value = 3, integer): 
+&gt;rates –&gt; 3
+The number omega rate classes to include in the model (permissible range = [1,10], default value = 3, integer): 
+&gt;syn-rates –&gt; 3
+The number of points in the initial distributional guess for likelihood fitting (permissible range = [1,10000], default value = 250, integer): 
+&gt;grid-size –&gt; 250
+The number of initial random guesses to 'seed' rate values optimization (permissible range = [1,25], default value = 1, integer): 
+&gt;starting-points –&gt; 1
+
+
+### Branches to test for selection in the BUSTED analysis
+* Selected 519 branches to test in the BUSTED analysis: `Acinonyx_jubatus, Acomys_cahirinus, Meriones_unguiculatus, Psammomys_obesus, Node23, Node21, Arvicanthis_niloticus, Grammomys_surdaster, Node28, Mastomys_coucha, Mus_caroli, Mus_musculus, Mus_spicilegus, Node35, Node33, Node31, Node27, Rattus_norvegicus, Rattus_rattus, Node38, Node26, Node20, Cricetulus_griseus, Microtus_arvalis, Microtus_agrestis, Node47, Microtus_oeconomus, Node46, Myodes_glareolus, Node45, Ondatra_zibethicus, Node44, Node42, Peromyscus_californicus_insignis, Peromyscus_eremicus, Node55, Peromyscus_leucopus, Peromyscus_maniculatus_bairdii, Node58, Node54, Sigmodon_hispidus, Node53, Node41, Node19, Cricetomys_gambianus, Node18, Nannospalax_galili, Rhizomys_pruinosus, Node63, Node17, Allactaga_bullata, Node16, Pedetes_capensis, Node15, Castor_canadensis, Dipodomys_ordii, Dipodomys_stephensi, Node70, Node68, Node14, Cavia_porcellus, Cavia_tschudii, Node79, Hydrochoerus_hydrochaeris, Node78, Dasyprocta_punctata, Node77, Chinchilla_lanigera, Dinomys_branickii, Node85, Ctenomys_sociabilis, Node84, Node76, Fukomys_damarensis, Heterocephalus_glaber, Node89, Node75, Hystrix_cristata, Node74, Ctenodactylus_gundi, Node73, Node13, Aplodontia_rufa, Cynomys_gunnisoni, Ictidomys_tridecemlineatus, Node102, Urocitellus_parryii, Node101, Spermophilus_dauricus, Node100, Marmota_flaviventris, Marmota_himalayana, Marmota_marmota_marmota, Node110, Marmota_monax, Node109, Node107, Node99, Xerus_inauris, Node98, Sciurus_carolinensis, Sciurus_vulgaris, Node115, Node97, Node95, Muscardinus_avellanarius, Node94, Node12, Ochotona_princeps, Oryctolagus_cuniculus_cuniculus, Node119, Node11, Alouatta_palliata, Ateles_geoffroyi, Node128, Pithecia_pithecia, Plecturocebus_donacophilus, Node131, Node127, Aotus_nancymaae, Callithrix_jacchus, Saguinus_imperator, Node137, Node135, Cebus_capucinus_imitator, Sapajus_apella, Node141, Saimiri_boliviensis_boliviensis, Node140, Node134, Node126, Cercocebus_atys, Mandrillus_leucophaeus, Node150, Papio_anubis, Theropithecus_gelada, Node153, Node149, Macaca_fascicularis, Macaca_fuscata_fuscata, Macaca_mulatta, Node159, Node157, Macaca_nemestrina, Node156, Node148, Chlorocebus_sabaeus, Node147, Colobus_angolensis_palliatus, Piliocolobus_tephrosceles, Node165, Nasalis_larvatus, Pygathrix_nemaeus, Node170, Rhinopithecus_bieti, Rhinopithecus_roxellana, Node173, Node169, Trachypithecus_francoisi, Node168, Node164, Node146, Gorilla_gorilla_gorilla, Homo_sapiens, Pan_paniscus, Pan_troglodytes, Node183, Node181, Node179, Pongo_abelii, Node178, Hylobates_moloch, Nomascus_leucogenys, Node187, Node177, Node145, Node125, Carlito_syrichta, Node124, Cheirogaleus_medius, Microcebus_murinus, Microcebus_sp3GT2019, Microcebus_tavaratra, Node198, Node196, Mirza_zaza, Node195, Node193, Lemur_catta, Prolemur_simus, Node202, Node192, Daubentonia_madagascariensis, Node191, Node123, Galeopterus_variegatus, Node122, Node10, Choloepus_hoffmanni, Myrmecophaga_tridactyla, Node208, Heterohyrax_brucei, Procavia_capensis, Node214, Loxodonta_africana, Node213, Trichechus_manatus_latirostris, Node212, Microgale_talazaci, Node211, Node207, Node9, Condylura_cristata, Scalopus_aquaticus, Node222, Uropsilus_gracilis, Node221, Solenodon_paradoxus, Solenodon_paradoxus_woodi, Node226, Node220, Node8, Aeorestes_cinereus, Lasiurus_borealis, Node233, Myotis_lucifugus, Node232, Miniopterus_natalensis, Miniopterus_schreibersii, Node237, Node231, Anoura_caudifer, Artibeus_jamaicensis, Phyllostomus_discolor, Tonatia_saurophila, Node248, Node246, Node244, Desmodus_rotundus, Node243, Micronycteris_hirsuta, Node242, Mormoops_blainvillei, Node241, Noctilio_leporinus, Node240, Node230, Eonycteris_spelaea, Rousettus_aegyptiacus, Node258, Macroglossus_sobrinus, Node257, Pteropus_alecto, Pteropus_giganteus, Node262, Node256, Hipposideros_armiger, Hipposideros_galeritus, Node267, Rhinolophus_ferrumequinum, Node266, Megaderma_lyra, Node265, Node255, Node229, Node7, Aepyceros_melampus, Neotragus_moschatus, Node282, Ammotragus_lervia, Capra_aegagrus, Capra_hircus, Node292, Capra_sibirica, Capra_ibex, Node295, Node291, Node289, Hemitragus_hylocrius, Ovis_ammon, Ovis_canadensis, Node301, Ovis_aries, Ovis_aries_musimon, Node304, Node300, Node298, Node288, Beatragus_hunteri, Damaliscus_lunatus, Node309, Connochaetes_taurinus, Node308, Hippotragus_niger_niger, Node307, Node287, Redunca_redunca, Node286, Antidorcas_marsupialis, Litocranius_walleri, Node317, Eudorcas_thomsonii, Node316, Cephalophus_harveyi, Neotragus_pygmaeus, Oreotragus_oreotragus, Node323, Node321, Node315, Node285, Node281, Bos_grunniens, Bos_mutus, Node329, Bos_indicus, Bos_taurus, Node332, Node328, Syncerus_caffer, Node327, Tragelaphus_strepsiceros, Node326, Node280, Moschus_berezovskii, Moschus_moschiferus, Node337, Node279, Alces_alces, Odocoileus_hemionus_hemionus, Odocoileus_virginianus_texanus, Node345, Rangifer_tarandus, Node344, Node342, Capreolus_pygargus, Hydropotes_inermis, Node349, Node341, Cervus_hanglu_yarkandensis, Przewalskium_albirostris, Node353, Muntiacus_muntjak, Muntiacus_reevesi, Node356, Node352, Node340, Node278, Antilocapra_americana, Giraffa_tippelskirchi, Okapia_johnstoni, Node361, Node359, Node277, Tragulus_javanicus, Node276, Balaenoptera_musculus, Eschrichtius_robustus, Node368, Eubalaena_japonica, Node367, Delphinapterus_leucas, Monodon_monoceros, Node376, Neophocaena_asiaeorientalis_asiaeorientalis, Phocoena_phocoena, Phocoena_sinus, Node381, Node379, Node375, Globicephala_melas, Sousa_chinensis, Tursiops_aduncus, Tursiops_truncatus, Node390, Node388, Node386, Lagenorhynchus_obliquidens, Node385, Orcinus_orca, Node384, Node374, Lipotes_vexillifer, Node373, Physeter_catodon, Node372, Node366, Hippopotamus_amphibius, Node365, Node275, Catagonus_wagneri, Sus_scrofa, Node398, Node274, Camelus_bactrianus, Camelus_ferus, Node403, Camelus_dromedarius, Node402, Lama_glama_chaku, Lama_guanicoe_cacsilensis, Node408, Vicugna_pacos, Vicugna_pacos_huacaya, Vicugna_vicugna_mensalis, Node413, Node411, Node407, Node401, Node273, Ceratotherium_simum_simum, Diceros_bicornis, Node419, Dicerorhinus_sumatrensis_sumatrensis, Node418, Tapirus_indicus, Tapirus_terrestris, Node423, Node417, Equus_asinus, Equus_asinus_asinus, Node427, Equus_caballus, Equus_przewalskii, Node430, Node426, Node416, Node272, Node6, Manis_javanica, Manis_pentadactyla, Node433, Node5, Ailuropoda_melanoleuca, Ursus_arctos_horribilis, Ursus_maritimus, Node441, Ursus_thibetanus_thibetanus, Node440, Node438, Ailurus_fulgens_styani, Enhydra_lutris_kenyoni, Lutra_lutra, Node454, Lontra_canadensis, Node453, Pteronura_brasiliensis, Node452, Mustela_erminea, Mustela_putorius, Mustela_putorius_furo, Node462, Node460, Neovison_vison, Node459, Node451, Martes_zibellina, Node450, Mellivora_capensis, Node449, Taxidea_taxus_jeffersonii, Node448, Node446, Arctocephalus_gazella, Eumetopias_jubatus, Zalophus_californianus, Node474, Node472, Callorhinus_ursinus, Node471, Odobenus_rosmarus_divergens, Node470, Halichoerus_grypus, Phoca_vitulina, Node480, Mirounga_angustirostris, Mirounga_leonina, Node484, Neomonachus_schauinslandi, Node483, Node479, Node469, Node445, Node437, Canis_lupus_dingo, Canis_lupus_familiaris, Node490, Lycaon_pictus, Node489, Vulpes_lagopus, Vulpes_vulpes, Node494, Node488, Node436, Node4, Crocuta_crocuta, Hyaena_hyaena, Node499, Cryptoprocta_ferox, Helogale_parvula, Mungos_mungo, Node505, Suricata_suricatta, Node504, Node502, Node498, Paradoxurus_hermaphroditus, Node497, Node3, Panthera_leo, Panthera_onca, Node511, Panthera_tigris_altaica, Node510, Node2, Felis_catus, Lynx_canadensis, Lynx_pardinus, Node517, Node515`
+
+
+### Obtaining branch lengths and nucleotide substitution biases under the nucleotide GTR model
+
+&gt;kill-zero-lengths –&gt; Yes
+
+### Deleted 14 zero-length internal branches: `Node127, Node159, Node222, Node27, Node286, Node289, Node292, Node301, Node304, Node321, Node381, Node386, Node390, Node413`
+* Log(L) = -68118.77, AIC-c = 137292.49 (527 estimated parameters)
+
+### Obtaining the global omega estimate based on relative GTR branch lengths and nucleotide substitution biases
+* Log(L) = -66241.06, AIC-c = 133524.88 (520 estimated parameters)
+* non-synonymous/synonymous rate ratio for *test* =   0.4040
+
+### Improving branch lengths, nucleotide substitution biases, and global dN/dS ratios under a full codon model
+* Log(L) = -66131.50, AIC-c = 133305.75 (520 estimated parameters)
+* non-synonymous/synonymous rate ratio for *test* =   0.3712
+
+### Performing the full (dN/dS &gt; 1 allowed) branch-site model fit
+* Log(L) = -64177.82, AIC-c = 129416.50 (529 estimated parameters)
+* For *test* branches, the following rate distribution for branch-site combinations was inferred
+
+|          Selection mode           |     dN/dS     |Proportion, %|               Notes               |
+|-----------------------------------|---------------|-------------|-----------------------------------|
+|        Negative selection         |     0.099     |   69.981    |                                   |
+|         Neutral evolution         |     1.000     |   29.916    |                                   |
+|      Diversifying selection       |    46.432     |    0.103    |                                   |
+
+* The following rate distribution for site-to-site **synonymous** rate variation was inferred
+
+|               Rate                | Proportion, % |               Notes               |
+|-----------------------------------|---------------|-----------------------------------|
+|               0.295               |    27.745     |                                   |
+|               0.851               |    45.688     |                                   |
+|               1.993               |    26.567     |                                   |
+
+
+### Performing the constrained (dN/dS &gt; 1 not allowed) model fit
+* Log(L) = -64204.14, AIC-c = 129467.13 (528 estimated parameters)
+* For *test* branches under the null (no dN/dS &gt; 1 model), the following rate distribution for branch-site combinations was inferred
+
+|          Selection mode           |     dN/dS     |Proportion, %|               Notes               |
+|-----------------------------------|---------------|-------------|-----------------------------------|
+|        Negative selection         |     0.045     |   64.724    |                                   |
+|         Neutral evolution         |     1.000     |    0.829    |                                   |
+|         Neutral evolution         |     1.000     |   34.446    |       Collapsed rate class        |
+
+* The following rate distribution for site-to-site **synonymous** rate variation was inferred
+
+|               Rate                | Proportion, % |               Notes               |
+|-----------------------------------|---------------|-----------------------------------|
+|               0.296               |    27.708     |                                   |
+|               0.853               |    45.668     |                                   |
+|               1.985               |    26.624     |                                   |
+
+----
+## Branch-site unrestricted statistical test of episodic diversification [BUSTED]
+Likelihood ratio test for episodic diversifying positive selection, **p =   0.0000**.
+
+</pre>
+</body>
+</html>
