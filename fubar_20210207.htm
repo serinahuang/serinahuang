@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!-- This file was created with the aha Ansi HTML Adapter. https://github.com/theZiz/aha -->
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="application/xml+xhtml; charset=UTF-8"/>
+<title>stdin</title>
+</head>
+<body>
+<pre>
+[shuang@n6406 hyphy-2.5.26]$ HYPHYMP ./res/TemplateBatchFiles/SelectionAnalyses/FUBAR.bf 
+
+Analysis Description
+--------------------
+Perform a Fast Unbiased AppRoximate Bayesian (FUBAR) analysis of a
+coding sequence alignment to determine whether some sites have been
+subject to pervasive purifying or diversifying selection. v2.1
+introduces two more methods for estimating the posterior distribution of
+grid weights: collapsed Gibbs MCMC (faster) and 0-th order Variation
+Bayes approximation (fastest). Please note that a FUBAR analysis
+generates a cache and a results JSON file in the same directory as
+directory as the original alignment. HyPhy needs to have write
+privileges to this directory. For example if the original file is in
+/home/sergei/FUBAR/data/pol.nex then at the end of a FUBAR run, there
+will also exist FUBAR-generated files
+/home/sergei/FUBAR/data/pol.nex.FUBAR.json,
+/home/sergei/FUBAR/data/pol.nex.fubrar.cache. They also provide
+checkpointing so that a partially completed analysis can be restarted.
+
+- __Requirements__: in-frame codon alignment (possibly partitioned) and a phylogenetic tree
+(one per partition)
+
+- __Citation__: FUBAR: a fast, unconstrained bayesian approximation for inferring
+selection (2013), Mol Biol Evol. 30(5):1196-205
+
+- __Written by__: Sergei L Kosakovsky Pond
+
+- __Contact Information__: spond@temple.edu
+
+- __Analysis Version__: 2.2
+
+
+&gt;code –&gt; Universal
+
+
+&gt;Select a coding sequence alignment file (`/u/home/s/shuang/softwares/hyphy-2.5.26/`) zap/ZAP_261_mammals_withmissing.fasta
+
+-------
+&gt;[WARNING] This dataset contains 5 duplicate sequences. Identical
+sequences do not contribute any information to the analysis and only
+slow down computation. Please consider removing duplicate or 'nearly'
+duplicate sequences, e.g. using
+https://github.com/veg/hyphy-analyses/tree/master/remove-duplicates
+prior to running selection analyses
+-------
+
+
+&gt;Please select a tree file for the data: (`/u/home/s/shuang/softwares/hyphy-2.5.26/`) zap/mammals_tree.nwk
+
+&gt;Loaded a multiple sequence alignment with **261** sequences, **753** codons, and **1** partitions from `/u/home/s/shuang/softwares/hyphy-2.5.26/zap/ZAP_261_mammals_withmissing.fasta`
+Save FUBAR cache to : 
+&gt;cache –&gt; /u/home/s/shuang/softwares/hyphy-2.5.26/zap/ZAP_261_mammals_withmissing.fasta.FUBAR.cache
+&gt; FUBAR will write cache and result files to _/u/home/s/shuang/softwares/hyphy-2.5.26/zap/ZAP_261_mammals_withmissing.fasta.FUBAR.cache_ and _/u/home/s/shuang/softwares/hyphy-2.5.26/zap/ZAP_261_mammals_withmissing.fasta.FUBAR.json_, respectively 
+
+
+&gt; Number of grid points per dimension (total number is D^2) (permissible range = [5,50], default value = 20, integer): 
+&gt;output –&gt; /u/home/s/shuang/softwares/hyphy-2.5.26/zap/ZAP_261_mammals_withmissing.fasta.FUBAR.json
+&gt; Number of grid points per dimension (total number is D^2) (permissible range = [5,50], default value = 20, integer): 
+&gt;grid –&gt; 20
+
+&gt;method –&gt; Variational-Bayes
+&gt; The concentration parameter of the Dirichlet prior (permissible range = [0.001,1], default value = 0.5): 
+&gt;concentration_parameter –&gt; 0.5
+
+&gt;non-zero –&gt; No
+
+
+### Obtaining branch lengths and nucleotide substitution biases under the nucleotide GTR model
+
+&gt;kill-zero-lengths –&gt; Yes
+
+### Deleted 14 zero-length internal branches: `Node127, Node159, Node222, Node27, Node286, Node289, Node292, Node301, Node304, Node321, Node381, Node386, Node390, Node413`
+* Log(L) = -68118.77, AIC-c = 137292.49 (527 estimated parameters)
+* Tree length (expected substitutions/site) for partition 1 :    7.841
+
+### Computing the phylogenetic likelihood function on the grid 
+* Determining appropriate tree scaling based on the best score from a  20 x 20 rate grid
+* Best scaling achieved for 
+	* synonymous rate =  1.227
+	* non-synonymous rate =  0.714
+* Computing conditional site likelihoods on a 20 x 20 rate grid
+
+### Running an iterative zeroth order variational Bayes procedure to estimate the posterior mean of rate weights
+* Using the following settings
+	* Dirichlet alpha  : 0.5
+
+### Tabulating site-level results
+|     Codon      |   Partition    |     alpha      |      beta      |Posterior prob for positive selection|
+|:--------------:|:--------------:|:--------------:|:--------------:|:-----------------------------------:|
+|       28       |       1        |        1.321   |        7.113   |       Pos. posterior = 0.9972       |
+|       38       |       1        |        0.881   |        2.802   |       Pos. posterior = 0.9848       |
+|       79       |       1        |        0.932   |        2.587   |       Pos. posterior = 0.9036       |
+|      464       |       1        |        0.906   |        2.812   |       Pos. posterior = 0.9894       |
+|      549       |       1        |        0.951   |        2.804   |       Pos. posterior = 0.9889       |
+|      563       |       1        |        0.660   |        2.745   |       Pos. posterior = 0.9863       |
+|      577       |       1        |        0.866   |        2.813   |       Pos. posterior = 0.9982       |
+|      596       |       1        |        0.258   |        0.800   |       Pos. posterior = 0.9212       |
+|      619       |       1        |        0.775   |        2.815   |       Pos. posterior = 0.9963       |
+|      667       |       1        |        0.592   |        2.755   |       Pos. posterior = 0.9927       |
+|      670       |       1        |        0.318   |        2.643   |       Pos. posterior = 0.9935       |
+|      684       |       1        |        1.254   |        2.815   |       Pos. posterior = 0.9040       |
+----
+## FUBAR inferred 12 sites subject to diversifying positive selection at posterior probability &gt;= 0.9
+Of these,  0.34 are expected to be false positives (95% confidence interval of 0-2 )</pre>
+</body>
+</html>
